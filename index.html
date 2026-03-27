@@ -81,6 +81,27 @@
     <div id="postsContainer" style="margin-top:20px;"></div>
 </section>
 
+<section id="appointment">
+    <h2>Book an Appointment 📅</h2>
+    <p>Schedule a session with a professional.</p>
+
+    <input type="text" id="name" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
+    
+    <input type="date" id="date" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
+    
+    <input type="time" id="time" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
+
+    <button onclick="bookAppointment()" style="padding:10px 20px; border:none; border-radius:20px; background:#4CAFAD; color:white; cursor:pointer;">
+        Book Appointment
+    </button>
+
+    <p id="confirmation" style="margin-top:15px; font-weight:bold;"></p>
+
+    <p style="color:red;">
+        ⚠️ This is a demo booking system. No real appointments are scheduled.
+    </p>
+</section>
+
 <footer>
     <p>⚠️ This is not a substitute for professional help</p>
 </footer>
