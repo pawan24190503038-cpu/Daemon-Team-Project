@@ -2,113 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Health Support</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="menu-page">
 
-<header>
-    <h1>Mental Health Support 🌿</h1>
-    <p>A safe space to track, learn, and grow</p>
-</header>
+<h1>🌿 Mental Health Support</h1>
+<p>Select a feature</p>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#resources">Resources</a>
-    <a href="#mood">Mood Tracker</a>
-    <a href="#community">Community</a>
-    <a href="#appointment">Appointment</a>
-    <a href="#chat">Chat with Friend</a>
-</nav>
-
-<section id="home">
-    <h2>Welcome 👋</h2>
-    <p>Your mental health matters. This platform helps you stay aware, learn coping strategies, and improve your well-being.</p>
-</section>
-
-<section id="resources">
-    <h2>Helpful Resources 📚</h2>
-
-    <div class="card">
-        <h3>🧘 Stress Management</h3>
-        <p>Practice breathing exercises, meditation, and journaling.</p>
-    </div>
-
-    <div class="card">
-        <h3>🌊 Anxiety Control</h3>
-        <p>Learn grounding techniques to stay calm during anxious moments.</p>
-    </div>
-
-    <div class="card">
-        <h3>🌙 Better Sleep</h3>
-        <p>Build a consistent sleep routine and avoid screen time before bed.</p>
-    </div>
-</section>
-
-<section id="mood">
-    <h2>Mood Tracker 😊</h2>
-    <p style="text-align:center;">How are you feeling today?</p>
-
-    <div class="mood-buttons">
-        <button class="happy" onclick="saveMood('😊 Happy')">😊 Happy</button>
-        <button class="neutral" onclick="saveMood('😐 Neutral')">😐 Neutral</button>
-        <button class="sad" onclick="saveMood('😢 Sad')">😢 Sad</button>
-    </div>
-
-    <p id="moodDisplay">No mood recorded</p>
-</section>
-
-<section id="community">
-    <h2>Anonymous Community 💬</h2>
-    <p>Share your thoughts freely. You are not alone.</p>
-
-    <p style="color:red;">⚠️ Please be respectful.</p>
-
-    <textarea id="postInput" placeholder="Write your thoughts..." rows="4"></textarea>
-    
-    <br><br>
-    <button onclick="addPost()">Post</button>
-
-    <div id="postsContainer"></div>
-</section>
-
-<section id="appointment">
-    <h2>Book an Appointment 📅</h2>
-
-    <input type="text" id="name" placeholder="Your Name">
-    <input type="date" id="date">
-    <input type="time" id="time">
-
-    <button onclick="bookAppointment()">Book Appointment</button>
-
-    <p id="confirmation"></p>
-
-    <p style="color:red;">⚠️ Demo only</p>
-</section>
-
-<section id="chat">
-    <h2>Chat with Friend 🤖</h2>
-
-    <div id="chatBox"></div>
-
-    <input type="text" id="userInput" placeholder="Type message...">
-    <button onclick="sendMessage()">Send</button>
-
-    <p style="color:red;">⚠️ Not a replacement for professional help</p>
-</section>
-
-<footer>
-    <p>⚠️ This is not a substitute for professional help</p>
-</footer>
-
-<script src="script.js"></script>
+<div class="menu">
+    <a href="mood.html"><button>Mood Tracker 😊</button></a>
+    <a href="community.html"><button>Community 💬</button></a>
+    <a href="appointment.html"><button>Appointment 📅</button></a>
+    <a href="chat.html"><button>Chat with Friend 🤖</button></a>
+</div>
 
 </body>
 </html>

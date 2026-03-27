@@ -1,3 +1,4 @@
+/* Reset + Base */
 * {
     margin: 0;
     padding: 0;
@@ -8,65 +9,125 @@
 body {
     background: #eef7f6;
     color: #333;
-}
-
-header {
-    background: linear-gradient(135deg, #4CAFAD, #6dd5ed);
-    padding: 40px;
     text-align: center;
-    color: white;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    background: white;
-}
-
-nav a {
-    padding: 15px;
-    text-decoration: none;
-    color: black;
-}
-
-section {
-    padding: 40px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.card {
-    background: white;
     padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
 }
 
-.mood-buttons button {
-    margin: 10px;
-    padding: 10px;
+/* =========================
+   MENU PAGE (Home Screen)
+========================= */
+.menu-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-textarea, input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+.menu {
+    margin-top: 20px;
 }
 
+.menu button {
+    display: block;
+    margin: 12px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #4CAFAD, #6dd5ed);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 260px;
+    transition: 0.3s;
+}
+
+.menu button:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   BUTTONS (General)
+========================= */
 button {
     padding: 10px 20px;
     background: #4CAFAD;
     color: white;
     border: none;
+    border-radius: 20px;
     cursor: pointer;
+    margin: 10px 0;
+    transition: 0.3s;
 }
 
+button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   INPUTS & TEXTAREA
+========================= */
+input, textarea {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+/* =========================
+   MOOD TRACKER
+========================= */
+.mood-buttons button {
+    margin: 10px;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.happy { background: #a8e6cf; }
+.neutral { background: #ffd3b6; }
+.sad { background: #ffaaa5; }
+
+#moodDisplay {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* =========================
+   COMMUNITY POSTS
+========================= */
+.card {
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   CHAT SECTION
+========================= */
 #chatBox {
     height: 300px;
     overflow-y: auto;
     background: white;
     padding: 10px;
-    margin: 10px 0;
+    margin: 15px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
 
 #chatBox p {
@@ -74,11 +135,16 @@ button {
     padding: 8px;
     border-radius: 8px;
     margin: 5px 0;
+    text-align: left;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #4CAFAD;
-    color: white;
+/* =========================
+   BACK BUTTON
+========================= */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4CAFAD;
+    font-weight: 600;
 }
