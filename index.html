@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- CSS FILE -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,6 +24,8 @@
     <a href="#resources">Resources</a>
     <a href="#mood">Mood Tracker</a>
     <a href="#community">Community</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#chat">Chat with Friend</a>
 </nav>
 
 <section id="home">
@@ -67,46 +69,45 @@
     <h2>Anonymous Community 💬</h2>
     <p>Share your thoughts freely. You are not alone.</p>
 
-    <p style="color:red;">
-        ⚠️ Please be respectful. This platform is for support only.
-    </p>
+    <p style="color:red;">⚠️ Please be respectful.</p>
 
-    <textarea id="postInput" placeholder="Write your thoughts..." rows="4" style="width:100%; padding:10px; border-radius:10px;"></textarea>
+    <textarea id="postInput" placeholder="Write your thoughts..." rows="4"></textarea>
     
     <br><br>
-    <button onclick="addPost()" style="padding:10px 20px; border:none; border-radius:20px; background:#4CAFAD; color:white; cursor:pointer;">
-        Post
-    </button>
+    <button onclick="addPost()">Post</button>
 
-    <div id="postsContainer" style="margin-top:20px;"></div>
+    <div id="postsContainer"></div>
 </section>
 
 <section id="appointment">
     <h2>Book an Appointment 📅</h2>
-    <p>Schedule a session with a professional.</p>
 
-    <input type="text" id="name" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
-    
-    <input type="date" id="date" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
-    
-    <input type="time" id="time" required style="width:100%; padding:10px; margin:10px 0; border-radius:10px;">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="date" id="date">
+    <input type="time" id="time">
 
-    <button onclick="bookAppointment()" style="padding:10px 20px; border:none; border-radius:20px; background:#4CAFAD; color:white; cursor:pointer;">
-        Book Appointment
-    </button>
+    <button onclick="bookAppointment()">Book Appointment</button>
 
-    <p id="confirmation" style="margin-top:15px; font-weight:bold;"></p>
+    <p id="confirmation"></p>
 
-    <p style="color:red;">
-        ⚠️ This is a demo booking system. No real appointments are scheduled.
-    </p>
+    <p style="color:red;">⚠️ Demo only</p>
+</section>
+
+<section id="chat">
+    <h2>Chat with Friend 🤖</h2>
+
+    <div id="chatBox"></div>
+
+    <input type="text" id="userInput" placeholder="Type message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <p style="color:red;">⚠️ Not a replacement for professional help</p>
 </section>
 
 <footer>
     <p>⚠️ This is not a substitute for professional help</p>
 </footer>
 
-<!-- JAVASCRIPT FILE -->
 <script src="script.js"></script>
 
 </body>
