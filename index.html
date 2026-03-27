@@ -2,21 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mental Health Support</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hand</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<body class="home-page">
 
-<body class="menu-page">
+    <!-- TOP TITLE -->
+    <header class="top-title">
+        <h2>Helping Hand</h2>
+    </header>
 
-<h1>🌿 Mental Health Support</h1>
-<p>Select a feature</p>
+    <!-- MAIN HERO SECTION -->
+    <main class="hero-section">
+        <div class="hero-box">
+            <h1 class="hero-text">
+                <span>we</span><br>
+                <span>are</span>
+                <span class="switch-shape"></span><br>
+                <span>here</span><br>
+                <span>to help 💕</span>
+            </h1>
+        </div>
 
-<div class="menu">
-    <a href="mood.html"><button>Mood Tracker 😊</button></a>
-    <a href="community.html"><button>Community 💬</button></a>
-    <a href="appointment.html"><button>Appointment 📅</button></a>
-    <a href="chat.html"><button>Chat with Friend 🤖</button></a>
-</div>
+        <p class="hero-subtitle">Your mental health matters</p>
 
+        <!-- TOGGLE -->
+        <div class="mode-toggle">
+            <span id="leftLabel" class="active-label">Seek Solution</span>
+
+            <label class="toggle-switch">
+                <input type="checkbox" id="helpToggle" onchange="toggleMode()">
+                <span class="slider"></span>
+            </label>
+
+            <span id="rightLabel">Ask a friend</span>
+        </div>
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">🏠<span>Home</span></a>
+        <a href="mood.html" class="nav-item">😊<span>Mood</span></a>
+        <a href="community.html" class="nav-item">💬<span>Community</span></a>
+        <a href="appointment.html" class="nav-item">📅<span>Appointment</span></a>
+        <a href="chat.html" class="nav-item">🤖<span>Chat</span></a>
+    </nav>
+
+    <script src="script.js"></script>
 </body>
 </html>

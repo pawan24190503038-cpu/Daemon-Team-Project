@@ -1,4 +1,6 @@
-/* Reset + Base */
+/* =========================
+   GLOBAL STYLES
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +16,7 @@ body {
 }
 
 /* =========================
-   MENU PAGE (Home Screen)
+   MENU PAGE
 ========================= */
 .menu-page {
     display: flex;
@@ -24,21 +26,17 @@ body {
     height: 100vh;
 }
 
-.menu {
-    margin-top: 20px;
-}
-
 .menu button {
     display: block;
     margin: 12px;
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 15px;
+    width: 250px;
     border-radius: 30px;
+    border: none;
     background: linear-gradient(135deg, #4CAFAD, #6dd5ed);
     color: white;
-    border: none;
+    font-size: 18px;
     cursor: pointer;
-    width: 260px;
     transition: 0.3s;
 }
 
@@ -47,32 +45,7 @@ body {
 }
 
 /* =========================
-   HEADINGS
-========================= */
-h1, h2 {
-    margin-bottom: 15px;
-}
-
-/* =========================
-   BUTTONS (General)
-========================= */
-button {
-    padding: 10px 20px;
-    background: #4CAFAD;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 10px 0;
-    transition: 0.3s;
-}
-
-button:hover {
-    opacity: 0.9;
-}
-
-/* =========================
-   INPUTS & TEXTAREA
+   INPUTS
 ========================= */
 input, textarea {
     width: 90%;
@@ -85,13 +58,26 @@ input, textarea {
 }
 
 /* =========================
+   BUTTONS
+========================= */
+button {
+    padding: 10px 20px;
+    background: #4CAFAD;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
    MOOD TRACKER
 ========================= */
 .mood-buttons button {
     margin: 10px;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 16px;
 }
 
 .happy { background: #a8e6cf; }
@@ -100,12 +86,11 @@ input, textarea {
 
 #moodDisplay {
     margin-top: 15px;
-    font-size: 18px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 /* =========================
-   COMMUNITY POSTS
+   COMMUNITY
 ========================= */
 .card {
     background: white;
@@ -117,29 +102,105 @@ input, textarea {
 }
 
 /* =========================
-   CHAT SECTION
+   CHAT UI (IMPROVED)
 ========================= */
 #chatBox {
-    height: 300px;
+    height: 350px;
     overflow-y: auto;
     background: white;
-    padding: 10px;
+    padding: 15px;
     margin: 15px auto;
-    border-radius: 10px;
+    border-radius: 15px;
     max-width: 500px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-#chatBox p {
-    background: #f1f1f1;
-    padding: 8px;
-    border-radius: 8px;
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
     margin: 5px 0;
-    text-align: left;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.user {
+    background: #4CAFAD;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+.bot {
+    background: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
 }
 
 /* =========================
-   BACK BUTTON
+   SPLASH SCREEN
+========================= */
+.splash-screen {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: opacity 0.8s ease;
+}
+
+/* Fade effect */
+.fade-out {
+    opacity: 0;
+}
+
+/* Logo circle */
+.logo-circle {
+    width: 140px;
+    height: 140px;
+    background: #ddd;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+/* Glow */
+.logo-circle::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #4CAFAD, #6dd5ed, #a18cd1);
+    filter: blur(12px);
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+.logo-circle span {
+    z-index: 2;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================
+   BACK LINK
 ========================= */
 a {
     display: inline-block;
@@ -149,56 +210,259 @@ a {
     font-weight: 600;
 }
 /* =========================
-   CHAT UI IMPROVEMENT
+   HOME PAGE REDESIGN
 ========================= */
-
-#chatBox {
-    height: 350px;
-    overflow-y: auto;
-    background: #ffffff;
-    padding: 15px;
-    margin: 15px auto;
-    border-radius: 15px;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+.home-page {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f3f3f3 60%, #d9f0fa 100%);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 100px;
+    overflow-x: hidden;
 }
 
-/* Message bubbles */
-.message {
-    max-width: 70%;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 20px;
+.top-title {
+    margin-top: 10px;
+}
+
+.top-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111;
+}
+
+.hero-section {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-box {
+    width: 90%;
+    max-width: 950px;
+    min-height: 420px;
+    border: 4px dashed #222;
+    border-radius: 50px;
+    padding: 50px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(3px);
+}
+
+.hero-text {
+    font-size: clamp(48px, 9vw, 120px);
+    line-height: 0.9;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    position: relative;
+}
+
+.switch-shape {
+    display: inline-block;
+    width: 180px;
+    height: 90px;
+    border-radius: 60px;
+    background: linear-gradient(90deg, #3366ff, #c86df8);
+    position: relative;
+    vertical-align: middle;
+    margin: 0 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.switch-shape::before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #f4f4f4;
+    border-radius: 50%;
+    left: 10px;
+    top: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    margin-top: 40px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #111;
+}
+
+.mode-toggle {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mode-toggle span {
+    color: #555;
+    transition: 0.3s;
+}
+
+.active-label {
+    color: #111;
+    font-weight: 700;
+}
+
+/* TOGGLE SWITCH */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 60px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #dcecf5;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1), 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left: 6px;
+    top: 6px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(68px);
+}
+
+/* =========================
+   BOTTOM NAVBAR
+========================= */
+.bottom-nav {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 950px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 14px 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    z-index: 999;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: 14px;
+    font-weight: 600;
+    gap: 5px;
+    transition: 0.3s;
 }
 
-/* User message (right side) */
-.user {
-    background: #4CAFAD;
-    color: white;
-    align-self: flex-end;
-    border-bottom-right-radius: 5px;
+.nav-item:hover {
+    transform: translateY(-3px);
+    color: #4CAFAD;
 }
 
-/* Bot message (left side) */
-.bot {
-    background: #f1f1f1;
-    color: #333;
-    align-self: flex-start;
-    border-bottom-left-radius: 5px;
+.nav-item.active {
+    color: #4CAFAD;
 }
 
-/* Input area */
-#chat input {
-    width: 65%;
-    padding: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+.nav-item span {
+    font-size: 13px;
 }
 
-#chat button {
-    border-radius: 20px;
-    padding: 10px 15px;
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .hero-box {
+        min-height: 300px;
+        padding: 30px 20px;
+        border-radius: 35px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .switch-shape {
+        width: 120px;
+        height: 60px;
+    }
+
+    .switch-shape::before {
+        width: 45px;
+        height: 45px;
+        top: 7px;
+        left: 7px;
+    }
+
+    .mode-toggle {
+        font-size: 16px;
+        gap: 12px;
+    }
+
+    .toggle-switch {
+        width: 100px;
+        height: 50px;
+    }
+
+    .slider::before {
+        width: 38px;
+        height: 38px;
+        top: 6px;
+        left: 6px;
+    }
+
+    .toggle-switch input:checked + .slider::before {
+        transform: translateX(48px);
+    }
+
+    .bottom-nav {
+        padding: 12px 8px;
+    }
+
+    .nav-item {
+        font-size: 12px;
+    }
+
+    .nav-item span {
+        font-size: 11px;
+    }
 }

@@ -1,4 +1,23 @@
-// Mood Tracker
+// =====================
+// SPLASH SCREEN
+// =====================
+function goToHome() {
+    let body = document.getElementById("splashBody");
+
+    if (body) {
+        body.classList.add("fade-out");
+
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 800);
+    } else {
+        window.location.href = "index.html";
+    }
+}
+
+// =====================
+// MOOD TRACKER
+// =====================
 function saveMood(mood) {
     localStorage.setItem("userMood", mood);
     displayMood();
@@ -6,19 +25,25 @@ function saveMood(mood) {
 
 function displayMood() {
     let mood = localStorage.getItem("userMood");
-    if (mood) {
-        document.getElementById("moodDisplay").innerText = "Last Mood: " + mood;
+    let el = document.getElementById("moodDisplay");
+
+    if (mood && el) {
+        el.innerText = "Last Mood: " + mood;
     }
 }
 
-// Forum
+// =====================
+// COMMUNITY
+// =====================
 function addPost() {
     let input = document.getElementById("postInput");
     let text = input.value.trim();
+
     if (text === "") return;
 
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     posts.unshift(text);
+
     localStorage.setItem("posts", JSON.stringify(posts));
 
     input.value = "";
@@ -28,6 +53,9 @@ function addPost() {
 function displayPosts() {
     let posts = JSON.parse(localStorage.getItem("posts")) || [];
     let container = document.getElementById("postsContainer");
+
+    if (!container) return;
+
     container.innerHTML = "";
 
     posts.forEach(post => {
@@ -38,31 +66,40 @@ function displayPosts() {
     });
 }
 
-// Appointment
+// =====================
+// APPOINTMENT
+// =====================
 function bookAppointment() {
-    let name = document.getElementById("name").value;
-    let date = document.getElementById("date").value;
-    let time = document.getElementById("time").value;
+    let name = document.getElementById("name")?.value;
+    let date = document.getElementById("date")?.value;
+    let time = document.getElementById("time")?.value;
 
     if (!name || !date || !time) {
-        alert("Fill all fields");
+        alert("Please fill all fields!");
         return;
     }
 
-    document.getElementById("confirmation").innerText =
-        `Appointment booked for ${name} on ${date} at ${time}`;
+    let confirm = document.getElementById("confirmation");
+
+    if (confirm) {
+        confirm.innerText =
+            `✅ Appointment booked for ${name} on ${date} at ${time}`;
+    }
 }
 
-// Chatbot
+// =====================
+// CHATBOT
+// =====================
 function sendMessage() {
     let input = document.getElementById("userInput");
-    let msg = input.value.trim();
-    if (msg === "") return;
+    let message = input.value.trim();
 
-    addMessage("You", msg);
+    if (message === "") return;
+
+    addMessage("You", message);
 
     setTimeout(() => {
-        addMessage("Friend 🤖", getReply(msg));
+        addMessage("Bot", getReply(message));
     }, 500);
 
     input.value = "";
@@ -70,6 +107,7 @@ function sendMessage() {
 
 function addMessage(sender, text) {
     let chatBox = document.getElementById("chatBox");
+    if (!chatBox) return;
 
     let msg = document.createElement("div");
     msg.classList.add("message");
@@ -96,6 +134,29 @@ function getReply(msg) {
     return "Tell me more...";
 }
 
-// Load data
-displayMood();
-displayPosts();
+// =====================
+// LOAD
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+    displayMood();
+    displayPosts();
+});
+
+// =====================
+// HOME TOGGLE
+// =====================
+function toggleMode() {
+    let toggle = document.getElementById("helpToggle");
+    let left = document.getElementById("leftLabel");
+    let right = document.getElementById("rightLabel");
+
+    if (!toggle || !left || !right) return;
+
+    if (toggle.checked) {
+        left.classList.remove("active-label");
+        right.classList.add("active-label");
+    } else {
+        right.classList.remove("active-label");
+        left.classList.add("active-label");
+    }
+}
