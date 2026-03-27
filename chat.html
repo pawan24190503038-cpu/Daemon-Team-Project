@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Friend</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <h2>Chat with Friend 🤖</h2>
+<p>Talk freely. I'm here to listen 💙</p>
 
+<!-- Chat Box -->
 <div id="chatBox"></div>
 
-<input id="userInput" placeholder="Type message...">
-<button onclick="sendMessage()">Send</button>
+<!-- Input Area -->
+<div style="display:flex; justify-content:center; gap:10px;">
+    <input id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+</div>
 
-<a href="index.html">⬅ Back</a>
+<!-- Warning -->
+<p style="color:red; margin-top:15px;">
+⚠️ This chatbot provides basic support and is not a replacement for professional help.
+</p>
 
+<!-- Back Button -->
+<a href="index.html">⬅ Back to Menu</a>
+
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>

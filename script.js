@@ -70,9 +70,19 @@ function sendMessage() {
 
 function addMessage(sender, text) {
     let chatBox = document.getElementById("chatBox");
-    let p = document.createElement("p");
-    p.innerHTML = `<strong>${sender}:</strong> ${text}`;
-    chatBox.appendChild(p);
+
+    let msg = document.createElement("div");
+    msg.classList.add("message");
+
+    if (sender === "You") {
+        msg.classList.add("user");
+    } else {
+        msg.classList.add("bot");
+    }
+
+    msg.innerText = text;
+
+    chatBox.appendChild(msg);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 

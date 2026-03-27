@@ -148,3 +148,57 @@ a {
     color: #4CAFAD;
     font-weight: 600;
 }
+/* =========================
+   CHAT UI IMPROVEMENT
+========================= */
+
+#chatBox {
+    height: 350px;
+    overflow-y: auto;
+    background: #ffffff;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 15px;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Message bubbles */
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* User message (right side) */
+.user {
+    background: #4CAFAD;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+}
+
+/* Bot message (left side) */
+.bot {
+    background: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+/* Input area */
+#chat input {
+    width: 65%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#chat button {
+    border-radius: 20px;
+    padding: 10px 15px;
+}
