@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mental Health Support</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-
+    <title>Mental Health Support</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+   <script src="script.js"></script>
+</body>
 
 <header>
     <h1>Mental Health Support 🌿</h1>
@@ -84,21 +80,6 @@
     <p>⚠️ This is not a substitute for professional help</p>
 </footer>
 
-<script>
-function saveMood(mood) {
-    localStorage.setItem("userMood", mood);
-    displayMood();
-}
-
-function displayMood() {
-    let mood = localStorage.getItem("userMood");
-    if (mood) {
-        document.getElementById("moodDisplay").innerText = "Last Mood: " + mood;
-    }
-}
-
-displayMood();
-</script>
 
 </body>
 </html>
