@@ -8,10 +8,10 @@ function goToHome() {
         body.classList.add("fade-out");
 
         setTimeout(() => {
-            window.location.replace("home.html");
+            window.location.replace("Home.html");
         }, 800);
     } else {
-        window.location.replace("home.html");
+        window.location.replace("Home.html");
     }
 }
 
