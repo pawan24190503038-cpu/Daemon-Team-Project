@@ -1,0 +1,108 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #eef7f6;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #4CAFAD, #6dd5ed);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #4CAFAD;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Mood Buttons */
+.mood-buttons {
+    text-align: center;
+}
+
+.mood-buttons button {
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.mood-buttons button:hover {
+    transform: scale(1.1);
+}
+
+.happy { background: #a8e6cf; }
+.neutral { background: #ffd3b6; }
+.sad { background: #ffaaa5; }
+
+/* Mood Display */
+#moodDisplay {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4CAFAD;
+    color: white;
+    margin-top: 40px;
+}
